@@ -65,4 +65,4 @@ def parse_args(args=None):
 
 if __name__ == '__main__':
     args = parse_args()
-    main('.', 'pygio2-win', args.new_name)
+    main('.', 'pygobject2-win', args.new_name)

@@ -12,8 +12,8 @@ import version
 
 
 site_packages_path = sysconfig.get_python_lib()
-sprem = re.match(
-    r'.*(lib[\\/](python\d\.\d[\\/])?site-packages)', site_packages_path, re.I)
+sprem = re.match(r'.*(lib[\\/](python\d\.\d[\\/])?site-packages)',
+		site_packages_path, re.I)
 rel_site_packages = sprem.group(1)
 
 
@@ -23,15 +23,15 @@ def collect_files(target, root):
             for dp, dn, filenames in os.walk(root)]
 
 
-setup(name='pygio2-win',
+setup(name='pygobject2-win',
       version=version.getVersion(),
-      description='Python GObject IO package for Windows.',
+      description='Python GObject package for Windows.',
       keywords='',
       author='Christian Fobel',
       author_email='christian@fobel.net',
-      url='https://github.com/wheeler-microfluidics/pygio2-win',
+      url='https://github.com/wheeler-microfluidics/pygobject2-win',
       license='GPL',
       install_requires=[],
       data_files=collect_files(os.path.join(rel_site_packages, 'gtk-2.0'),
-                               'gio'),
+                               'gobject'),
       zip_safe=False)
